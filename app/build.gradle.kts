@@ -52,20 +52,34 @@ android {
 }
 
 dependencies {
-    // ✅ Compose BOM
+    // ----------------------------------------------------
+    // ✅ Core Dependencies for Travel Post Feature
+    // ----------------------------------------------------
+
+    // Compose BOM (Always use the platform() dependency for Compose versions)
     implementation(platform(libs.androidx.compose.bom))
 
-    // ✅ Compose + Material3
-    implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.material3)
+    // Compose Core + Material3
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.0")
-    implementation("androidx.compose.material3:material3-icons-extended")
+    implementation(libs.androidx.material3) // Material 3 UI components
 
-    // ✅ Coil for image loading
+    // Activity Compose (required to set up Compose content in the Activity)
+    implementation(libs.androidx.activity.compose)
+
+    // Lifecycle ViewModel integration for Compose (required to use viewModel() function)
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.0")
+
+    // Extended Icons (required for Icons.Filled.Add, Icons.Filled.Star, etc.)
+    implementation("androidx.compose.material:material-icons-extended")
+
+    // Coil for image loading (essential for loading image URLs)
     implementation("io.coil-kt:coil-compose:2.7.0")
+
+    // ----------------------------------------------------
+    // Existing Dependencies
+    // ----------------------------------------------------
 
     // Testing
     testImplementation(libs.junit)
