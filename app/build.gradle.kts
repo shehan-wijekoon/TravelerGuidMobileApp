@@ -40,6 +40,20 @@ android {
 }
 
 dependencies {
+    // --- Navigation ---
+    implementation("androidx.navigation:navigation-compose:2.7.7")
+    // --- ViewModel and LiveData/Flow Integration ---
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.0")
+    // --- Compose Material 3 Extended Icons ---
+    implementation("androidx.compose.material:material-icons-extended")
+    // Firebase BOM (Critical for version management)
+    implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
+    // Firebase Firestore SDK (Contains @DocumentId)
+    implementation("com.google.firebase:firebase-firestore-ktx")
+    // Coroutines Play Services (For using suspend functions with Firebase)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.8.0")
+    // Coil - Image loading library for Compose
+    implementation("io.coil-kt:coil-compose:2.6.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
